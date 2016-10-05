@@ -26,7 +26,7 @@ class EnableStatus(ndb.Model):
     enabled = ndb.BooleanProperty(indexed=False, default=False)
 
 
-# ================================
+# ================================\
 
 def setEnabled(chat_id, yes):
     es = EnableStatus.get_or_insert(str(chat_id))
@@ -132,6 +132,8 @@ class WebhookHandler(webapp2.RequestHandler):
             reply('telebot starter kit, created by yukuku: https://github.com/yukuku/telebot')
         elif 'what time' in text:
             reply('look at the corner of your screen!')
+        elif 'working' in text:
+            reply('its working itsworking')
         else:
             if getEnabled(chat_id):
                 reply('I got your message! (but I do not know how to answer)')
